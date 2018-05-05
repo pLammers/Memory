@@ -36,9 +36,7 @@ function setElementCount(count){
 }
 
 function gameIsWon(){
-    if(elementCount <= 2) return true;
-
-    return false;
+    return elementCount <= 2;
 }
 
 function won(){

@@ -22,7 +22,7 @@ $elementCount = count($memoryFields);
 <?php $counter = 0; foreach($memoryFields as $memoryField): ?>
 <?php if($counter % 4 === 0){$trOpenCounter = $counter; echo '<tr class="memory__table-row">';} ?>
 <td align="right" class="memory__table-element"><span onclick="onClickMemoryElement(this)" class="memory__field" data-background="<?=$memoryField['image']?>"></span></td>
-<?php if($counter === $trOpenCounter+4) echo '</tr>';?>
+<?php if($counter === $trOpenCounter+4 && $counter === $elementCount) echo '</tr>';?>
 <?php $counter++; endforeach; ?>
 </table>
 </body>
