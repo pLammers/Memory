@@ -1,0 +1,25 @@
+html{
+  background-color: #222222;
+}
+
+
+.memory__field{
+  height: 100%;
+  width: 100%;
+  background-color: darkgray;
+  display: block;
+  border-style: solid;
+  border-color: black;
+  border-width: 4px;
+}
+
+.memory__table-element{
+  padding-left: 30px;
+  padding-top: 30px;
+  height: 150px;
+  width: 150px;
+}
+
+.memory__table-row{
+
+}

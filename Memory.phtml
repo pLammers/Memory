@@ -1,0 +1,29 @@
+<?php
+
+include("MemoryApi.php");
+
+$memoryApi = new MemoryApi();
+
+$memoryFields = $memoryApi->getMemoryFields();
+$elementCount = count($memoryFields);
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="Memory.css">
+    <script src="Memory.js"></script>
+    <script> setElementCount(<?=$elementCount?>) </script>
+    <meta charset="UTF-8">
+    <title>Memory</title>
+</head>
+<body>
+<table>
+<?php $counter = 0; foreach($memoryFields as $memoryField): ?>
+<?php if($counter % 4 === 0){$trOpenCounter = $counter; echo '<tr class="memory__table-row">';} ?>
+<td align="right" class="memory__table-element"><span onclick="onClickMemoryElement(this)" class="memory__field" data-background="<?=$memoryField['image']?>"></span></td>
+<?php if($counter === $trOpenCounter+4) echo '</tr>';?>
+<?php $counter++; endforeach; ?>
+</table>
+</body>
+</html>
