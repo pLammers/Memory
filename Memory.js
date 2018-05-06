@@ -1,4 +1,4 @@
-const defaultColor = 'darkgrey';
+const defaultBackground = 'background.png';
 
 let pastElementOne = null;
 let pastElementTwo = null;
@@ -6,9 +6,7 @@ let elementCount = 0;
 
 function onClickMemoryElement(element) {
 
-    if(element === pastElementOne) return;
-
-    element.style.backgroundColor = element.dataset.background;
+    if(element === pastElementOne || element === pastElementTwo) return;
     if(gameIsWon()) won();
 
     if (pastElementOne !== null && pastElementTwo !== null) {
@@ -17,12 +15,14 @@ function onClickMemoryElement(element) {
             pastElementTwo.style.display = 'none';
             elementCount -= 2;
         } else {
-            pastElementOne.style.backgroundColor = defaultColor;
-            pastElementTwo.style.backgroundColor = defaultColor;
+            pastElementOne.style.backgroundImage = buildBackgroundUrl(defaultBackground);
+            pastElementTwo.style.backgroundImage = buildBackgroundUrl(defaultBackground);
         }
         pastElementOne = null;
         pastElementTwo = null;
     }
+
+    element.style.backgroundImage = buildBackgroundUrl(element.dataset.background);
 
     if (!pastElementOne) {
         pastElementOne = element;
@@ -33,6 +33,10 @@ function onClickMemoryElement(element) {
 
 function setElementCount(count){
     elementCount = count;
+}
+
+function buildBackgroundUrl(file){
+    return 'url(images/'+ file + ')';
 }
 
 function gameIsWon(){

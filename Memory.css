@@ -2,11 +2,12 @@ html{
   background-color: #222222;
 }
 
-
 .memory__field{
   height: 100%;
   width: 100%;
-  background-color: darkgray;
+  //background-color: darkgray;
+  background-image: url("./images/background.png");
+  background-size: cover;
   display: block;
   border-style: solid;
   border-color: black;
