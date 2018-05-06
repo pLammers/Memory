@@ -1,26 +1,35 @@
 html{
   background-color: #222222;
+  height: 100%
+}
+
+body{
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.memory__table{
+  height: 100%;
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.memory__table-row{
+}
+
+.memory__table-element{
+  width: 25%;
 }
 
 .memory__field{
   height: 100%;
-  width: 100%;
-  //background-color: darkgray;
+  width: auto;
   background-image: url("./images/background.png");
-  background-size: cover;
+  background-size: 100% 100%;
   display: block;
   border-style: solid;
   border-color: black;
   border-width: 4px;
-}
-
-.memory__table-element{
-  padding-left: 30px;
-  padding-top: 30px;
-  height: 175px;
-  width: 175px;
-}
-
-.memory__table-row{
-
 }
